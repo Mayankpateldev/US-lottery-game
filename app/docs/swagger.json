@@ -1,0 +1,119 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Powerball lottery game.",
+      "description": "Powerball is a popular US lottery game."
+    },
+    "host": "localhost:3000",
+    "basePath": "/lottery",
+    "tags": [
+      {
+        "name": "Lottery",
+        "description": "API for lottery"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/": {
+        "post": {
+          "tags": [
+            "Lottery"
+          ],
+          "description": "API will accept data for a lottery ticket, and respond with whether each pick has won, the prize won per-pick, and the total of all prizes won on the ticket. It is up to you to design and build this API.",          
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "lotter object",
+              "required": true,
+              "schema": {
+                "type": "object",
+
+                "$ref": "#/definitions/lottery"
+              }
+            }
+          ],
+        "responses": {
+            "200": {
+              "description": "Successfully check records"            
+            },
+            "422" : {
+                "description": "Validation error"
+            },
+            "404": {
+                "description": "No draw found for date"
+            }
+          }
+        }       
+      }      
+    },
+    "definitions":{
+        "lottery":{
+            "required": [
+                "date",
+                "picks"
+              ],
+              "properties": {
+                "date": {
+                  "type": "string",
+                  "example": "2020-06-06"              
+                },
+                "picks": {
+                    "type": "array",
+                    "xml": {
+                      "name": "picks",
+                      "wrapped": true
+                    },
+                    "items": {
+                        "$ref": "#/definitions/pick"
+                    },
+                    "example": [
+                        {
+                            "numbers": [
+                                1,
+                                18,
+                                26,
+                                41,
+                                32
+                            ],
+                            "powerball": 18
+                        }
+                    ]                   
+                  }
+            }
+        },
+        "pick": {
+            "type": "object",
+            "properties": {
+              "numbers": {
+                "type": "array",
+                "xml": {
+                  "name": "picks",
+                  "wrapped": true
+                },
+                "items": {
+                    "type":"number"
+                } 
+              },
+              "powerball": {
+                "type": "number"
+              }
+            },
+            "xml": {
+              "name": "pick"
+            }
+          }
+    }
+  }

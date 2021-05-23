@@ -1,0 +1,48 @@
+{
+  "name": "interview",
+  "version": "1.0.0",
+  "description": "A minimal template project for JavaScript interviews",
+  "author": "Kris Read",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neofinancial/interview.git"
+  },
+  "engines": {
+    "node": "^14"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "jest": {
+    "verbose": true
+  },
+  "dependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/date-fns": "^1.30.1",
+    "@types/node-fetch": "^2.5.10",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "date-fns": "^1.30.1",
+    "dotenv": "^9.0.2",
+    "express": "^4.16.4",
+    "express-async-router": "^0.1.15",
+    "husky": "^6.0.0",
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.1",
+    "prettier": "^2.3.0",
+    "supertest": "^6.1.3",
+    "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "eslint": "^7.16.0",
+    "eslint-plugin-jest": "^22.3.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-unicorn": "^7.1.0",
+    "jest": "^26.6.3"
+  }
+}
