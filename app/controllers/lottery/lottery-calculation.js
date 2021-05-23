@@ -10,7 +10,6 @@ exports.calculateWinnings = function (matchCount, doesPowerballMatch) {
         case 4:
             return doesPowerballMatch ? 50000 : 100
         case 5:
-            // jackpot isn't calculated as part of the winnings and is handled separately
             return doesPowerballMatch ? 0 : 1000000
         default:
             return 0
