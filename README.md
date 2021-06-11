@@ -1,4 +1,4 @@
-# Interview Exercise
+# Exercise
 
 Your goal is to extend the functionality of this Node.js service.
 
@@ -96,13 +96,6 @@ You should see output like this:
  Time:        2.585s
  Ran all test suites.
 ```
-
-## Submission
-
-Make your changes on a branch and then make a PR back to your private repo. That makes it easy for us to review your changes in one place. When you're ready for us to review your solution give these users access to your repo:
-
-- [krisread](https://github.com/krisread)
-- [iansu](https://github.com/iansu)
 
 ## Contact
 
